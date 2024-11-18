@@ -5,7 +5,10 @@
 // so the question is what is the difference between them - suppose if we hae multiple components in a single file then we can use named export bcoz we can export multiple components from a single file but in case of default export we can export only one component from a single file
 // so in this case we can use default export bcoz we have only one component in this file
 
-import { useState } from "react"; //importing useState from react
+import {useState} from "react"; //importing useState from react
+
+
+
 
 const Title = () => (
   
@@ -20,7 +23,11 @@ const Title = () => (
   );
  
   const Header = () => {
+    //maanging login and logout using stateHooks
+    const [isLoggedIn, setIsLoggedIn]= useState(true);
     return (
+      
+      
       <div className="header">
         <Title />
         <div className="nav-items">
@@ -29,8 +36,15 @@ const Title = () => (
             <li>About</li>
             <li>Contact</li>
             <li>Cart</li>
-          </ul>
+            </ul>
+            
         </div>
+        {/* Conditionally render Login/Logout button */}
+        {isLoggedIn ? (
+            <button onClick={() => setIsLoggedIn(false)}>Logout</button>
+          ) : (
+            <button onClick={() => setIsLoggedIn(true)}>Login</button>
+          )}
       </div>
     );
   };

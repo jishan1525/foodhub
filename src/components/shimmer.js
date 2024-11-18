@@ -1,11 +1,17 @@
-const shimmer =() =>{
-    return (
-        <div className="shimmer-wrapper">
-            <div className="shimmer">
-                <h1>Loading...</h1>
-                </div>
-        </div>
-    )
-}
+import React from "react";
+ // Add the shimmer styles here
 
-export default shimmer; //default export
+const ShimmerCard = () => {
+    return (
+    <> <div className="shimmer-card">
+   
+    <div className="shimmer-image"></div>
+      <div className="shimmer-text"></div>
+      <div className="shimmer-text short"></div>
+    </div>
+    </>
+  );
+};
+
+export default ShimmerCard;
+ //default export
