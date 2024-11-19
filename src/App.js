@@ -4,13 +4,18 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import { IMG_CDN_URL } from "./components/constants";
 import Footer from "./components/Footer";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import About from "./components/About";
+import ErrorPage from "./components/Error";
+import Contact from "./components/Contact";
+import ResturantMenu from "./components/ResturantMenu";
 //default import
 //import Title from "./components/Header";
 //named import
-//import { Title } from "./components/Title"; 
+//import { Title } from "./components/Title";
 //this is not object destructoring as we are importing the default export and not the named export
 // import * as Obj from "./components/Title"; //this is object destructoring as we are importing all the named exports from the file
-//how to use this obj => Obj.Title 
+//how to use this obj => Obj.Title
 //config driven UI development in react using JSX is basically making the UI dynamic and this a good practice
 //When we buid a website so we want to render the same component multiple times with different data. So we can make the component dynamic by passing the data as props to the component and then rendering the component multiple times with different data. This is called config driven UI development.
 //backend is driving the UI with the help of APIs and the data is coming from the server and we are rendering the data in the UI. The data is coming in the form of an array of objects and we are mapping over the array and passing the object as a prop to the component and rendering the component multiple times with different data. This is called config driven UI development.
@@ -63,11 +68,7 @@ import Footer from "./components/Footer";
 //   </div>
 // )
 
-
-
 //Composing components
-
-
 
 //building the resturant card --> Hardcoding the data(we will fetch the data from the server later)
 // const ResturantCard = () => {
@@ -104,19 +105,11 @@ import Footer from "./components/Footer";
 //   );
 // };
 
-
-
 //live data from swiggy
 //check constants.js for the file
 // check conponents/Body.js for the code
 
-
-
-
 //no key < index key < unique key  //key is used to identify the element in the list
-
-
-
 
 const AppLayout = () => {
   return (
@@ -124,13 +117,40 @@ const AppLayout = () => {
     //JSX expression must have one parent element and we don't want to add extra div
     //React.Fragment is a built-in component that we can use to wrap multiple elements and it doesn't render any extra element to the DOM
     <>
-      <Header/>
-      <Body/>
-      <Footer/>
+      <Header />
+      <Outlet />
+      <Footer />
     </>
   );
 };
 
+const appRounter = createBrowserRouter(
+  [
+  {
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/Contact",
+        element: <Contact/>,
+      },
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/rest/:id",
+        element: <ResturantMenu/>,
+      },
+    ]
+  }
+]);
+
 const root = ReactDOM.createRoot(document.getElementById("root")); // Create a root
 //root.render(<HeaderComponent/>);  // Render the component tree//
-root.render(<AppLayout />); // Render the component tree
+root.render(<RouterProvider router={appRounter} />); // Render the component tree
