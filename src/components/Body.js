@@ -3,6 +3,7 @@ import ShimmerCard from "./shimmer";
 import ResturantCard from "./ResturantCard";
 import { Link } from "react-router-dom";
 
+
 // useEffect: Used to perform side effects, like fetching data from an API.
 // 	•	useState: For managing component states, like restaurant data and search text.
 // 	•	ShimmerCard: A component that shows a loading effect while the actual data is being fetched.
@@ -103,11 +104,12 @@ const Body = () => {
           onChange={(e) => setSearchText(e.target.value)}
         />
         <button
-          className="search-btn"
+          className="search-button"
           onClick={() => {
             const data = filterData(searchText, allResturant);
             setFilteredResturants(data);
           }}
+          
         >
           Search
         </button>

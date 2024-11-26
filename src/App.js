@@ -9,6 +9,7 @@ import About from "./components/About";
 import ErrorPage from "./components/Error";
 import Contact from "./components/Contact";
 import ResturantMenu from "./components/ResturantMenu";
+
 //default import
 //import Title from "./components/Header";
 //named import
@@ -147,6 +148,10 @@ const appRounter = createBrowserRouter(
         path: "/rest/:id",
         element: <ResturantMenu/>,
       },
+      // {
+      //   path: "/formik",
+      //   element: <formik/>,
+      // },
     ]
   }
 ]);

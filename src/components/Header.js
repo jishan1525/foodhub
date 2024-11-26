@@ -17,7 +17,7 @@ const Title = () => (
       <img
         className="logo"
         alt="logo"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQduWeshXxyo7rGEmHnyTUsTpxOFtleP5mZ2g&s"
+        src="https://london-post.co.uk/wp-content/uploads/2020/06/foodhub-logo.png"
       />
     </a>
     

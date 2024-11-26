@@ -1,9 +1,116 @@
+/* Header styles */
 .header {
   display: flex;
   justify-content: space-between;
-  border: 1px solid black;
-  margin: 10px;
-  /* margin: 10px; //so that it does not stick to the edge of the screen */
+  align-items: center;
+  background-color: #f8f9fa; /* Light background for a clean look */
+  padding: 15px 30px; /* Space around content */
+  border-bottom: 2px solid #d61e1c; /* Subtle bottom border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+/* Logo styles */
+.logo {
+  height: 60px;
+  width: auto;
+  border-radius: 10px; /* Rounded corners for the logo */
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Navigation items */
+.nav-items ul {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Space between list items */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-items a {
+  text-decoration: none;
+  color: #d61e1c; /* Dark color for contrast */
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-items a:hover {
+  color: #007bff; /* Highlight color on hover */
+}
+
+.nav-items li {
+  cursor: pointer;
+}
+
+/* Login/Logout button */
+button {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background-color: #d61e1c; /* Primary button color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #d61e1c; /* Darker blue on hover */
+}
+
+/* Search container styles */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Space between input and button */
+  margin: 15px auto; /* Center alignment */
+  width: 100%;
+  max-width: 600px; /* Restrict maximum width */
+}
+
+/* Search input styles */
+.search-input {
+  flex-grow: 1; /* Make input expand to available space */
+  padding: 10px 15px;
+  font-size: 16px;
+  
+  border: 2px solid #007bff; /* Light border */
+  border-radius: 25px; /* Rounded edges */
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-input:focus {
+  border-color: #d61e1c; /* Highlighted border on focus */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Subtle glow */
+}
+
+/* Search button styles */
+.search-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background-color: #d61e1c; /* Primary button color */
+  border: none;
+  border-radius: 25px; /* Rounded edges */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-button:hover {
+  background-color: #98191a; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight scale effect */
+}
+
+.search-button:active {
+  background-color: #d61e1c; /* Even darker blue on click */
 }
 
 .nav-items > ul {
@@ -24,7 +131,7 @@
   border: 1px solid black;
   margin: 10px;
   padding: 10px;
-  width: 200px;
+  width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -36,6 +143,7 @@
   object-fit: cover;
 }
 
+
 /* .resturant-list{
     display: flex;
     flex-wrap: wrap;
@@ -44,9 +152,11 @@
 .resturant-list {
   display: flex; /* Arrange items in a row */
   flex-wrap: wrap; /* Allow items to wrap if they exceed the row width */
-  gap: 20px; /* Add space between items */
+  justify-content: center; /* Center items horizontally */
+  gap: 20px; /* Add consistent space between items */
+  padding: 10px; /* Optional: Add padding around the container */
+  margin: 0 auto; /* Center the whole container */
   text-decoration: none;
-  /* Center the items horizontally */
 }
 
 .resturant-list > Link {
@@ -54,31 +164,29 @@
 }
 
 .shimmer-card {
-  width: 200px;
-  height: 300px;
+  width: 260px; /* Match the restaurant card width */
+  height: 350px; /* Match the restaurant card height */
   background-color: #f6f7f8;
-  border-radius: 8px;
-  overflow: hidden;
+  border-radius: 8px; /* Same border radius as the restaurant card */
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px;
+  flex-direction: column; /* Align content vertically */
+  gap: 10px; /* Space between shimmer elements */
+  padding: 15px; /* Add padding for alignment */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for consistency */
 }
 
 .shimmer-image {
-  width: 100%;
-  height: 150px;
+  width: 100%; /* Fill the card width */
+  height: 150px; /* Match image height of the restaurant card */
   background: linear-gradient(to right, #f6f7f8 0%, #edeef1 50%, #f6f7f8 100%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite linear;
-  border-radius: 8px;
+  border-radius: 8px; /* Same border radius as images in the card */
 }
 
 .shimmer-text {
-  width: 100%;
-  height: 20px;
+  width: 100%; /* Full width for text blocks */
+  height: 20px; /* Simulate the height of text lines */
   background: linear-gradient(to right, #f6f7f8 0%, #edeef1 50%, #f6f7f8 100%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite linear;
@@ -86,7 +194,7 @@
 }
 
 .shimmer-text.short {
-  width: 60%;
+  width: 60%; /* Shorter line for variety, e.g., rating or small text */
 }
 
 @keyframes shimmer {
@@ -97,11 +205,13 @@
     background-position: 200% 0;
   }
 }
+
 .Shimmer-test {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Distribute shimmer cards evenly */
+  flex-wrap: wrap; /* Allow wrapping to mimic restaurant card layout */
+  gap: 20px; /* Ensure consistent spacing between shimmer cards */
 }
-
 .restaurant-container {
   max-width: 600px;
   margin: 20px auto;
@@ -147,4 +257,87 @@
   margin-top: 15px;
   font-style: italic;
   color: #888;
+}
+/* Card Container */
+.card {
+  background-color: #fff; /* White background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effects */
+  max-width: 300px; /* Set maximum width */
+  min-width: 300px; /* Set minimum width */
+  height: 400px; /* Fix height to ensure uniformity */
+  display: flex; /* Enable flexbox layout */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: space-between; /* Distribute space evenly */
+  margin: 20px; /* Spacing between cards */
+  overflow: hidden; /* Clip overflowing elements */
+  text-align: center; /* Center align content */
+  font-family: "Arial", sans-serif; /* Font style */
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: translateY(-10px); /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+}
+
+/* Card Image */
+.card img {
+  width: 100%; /* Full width of the card */
+  height: 200px; /* Fixed height for uniformity */
+  object-fit: cover; /* Crop image to fit container */
+  border-bottom: 2px solid #f0f0f0; /* Divider between image and text */
+}
+
+/* Card Title (Restaurant Name) */
+.card h1 {
+  font-size: 2em; /* Moderate font size */
+  font-weight: bold;
+  margin: 10px 0; /* Spacing around the title */
+  color: #333; /* Dark color for contrast */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Add ellipsis for long text */
+}
+
+/* Cuisine Text */
+.card p:first-of-type {
+  font-size: 1em; /* Standard font size */
+  color: #666; /* Gray text for secondary information */
+  margin: 5px 0; /* Spacing above and below */
+  overflow: hidden; /* Prevent overflow */
+  text-overflow: ellipsis; /* Add ellipsis for long text */
+  white-space: nowrap; /* Keep on one line */
+}
+
+/* Rating Text */
+.card p:last-of-type {
+  font-size: 1em; /* Standard font size */
+  font-weight: bold; /* Emphasize rating */
+  color: #4caf50; /* Green color for ratings */
+  margin-bottom: 10px; /* Spacing below */
+}
+
+/* Star Rating Styles */
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.star {
+  font-size: 20px; /* Adjust size */
+  color: #ffc107; /* Gold color for stars */
+}
+
+.star.empty {
+  color: #e0e0e0; /* Light gray for empty stars */
+}
+
+.rating-text {
+  font-size: 14px;
+  color: #666;
+  margin-left: 5px; /* Space between stars and text */
 }
