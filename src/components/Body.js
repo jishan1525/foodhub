@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ShimmerCard from "./shimmer";
 import ResturantCard from "./ResturantCard";
+import { Link } from "react-router-dom";
 
 // useEffect: Used to perform side effects, like fetching data from an API.
 // 	•	useState: For managing component states, like restaurant data and search text.
@@ -91,9 +92,8 @@ const Body = () => {
   }
 
   return (
-    
     <>
-     {/* search input and button funtionality */}
+      {/* search input and button funtionality */}
       <div className="search-container">
         <input
           type="text"
@@ -112,16 +112,21 @@ const Body = () => {
           Search
         </button>
       </div>
-          {/* conditional rendering for results 
-          	•	If No Results: Displays "No Results Found" if filteredResturants is empty.
-	          •	Otherwise: Maps through filteredResturants to render ResturantCard components.
-            */}
+      {/* conditional rendering for results 
+          •	If No Results: Displays "No Results Found" if filteredResturants is empty.
+          •	Otherwise: Maps through filteredResturants to render ResturantCard components.
+      */}
       <div className="resturant-list">
         {filteredResturants.length === 0 ? (
           <h3 className="no-results">No Results Found</h3>
         ) : (
           filteredResturants.map((restaurant) => (
-            <ResturantCard key={restaurant.info.id} restaurant={restaurant} />
+            <Link
+              to={"/rest/" + restaurant.info.id}
+              style={{ textDecoration: "none" }}
+            >
+              <ResturantCard key={restaurant.info.id} restaurant={restaurant} />
+            </Link>
           ))
         )}
       </div>
