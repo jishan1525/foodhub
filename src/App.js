@@ -9,6 +9,7 @@ import About from "./components/About";
 import ErrorPage from "./components/Error";
 import Contact from "./components/Contact";
 import ResturantMenu from "./components/ResturantMenu";
+import Profile from "./components/ProfileClass";
 
 //default import
 //import Title from "./components/Header";
@@ -135,6 +136,12 @@ const appRounter = createBrowserRouter(
       {
         path: "/about",
         element: <About />,
+        children: [    //Nested routing
+          {
+            path: "Profile",
+            element: <Profile/>, //This will be displayed when the path is /about/Profile but but but it will not be displayed when the path is /Profile as the parent path is /about abd we need to specify the outlet inside the parent component to display the child component -> go and view the About.js file
+          },
+        ],
       },
       {
         path: "/Contact",
@@ -142,7 +149,7 @@ const appRounter = createBrowserRouter(
       },
       {
         path: "/",
-        element: <Body />,
+        element: <Body/>,
       },
       {
         path: "/rest/:id",
