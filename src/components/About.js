@@ -30,8 +30,8 @@ class About extends React.Component{
             <p>
                
                 This is the About us page of swiggy clone</p>
-                <Outlet name={"First one"}/>
-                <Profile name={"First one"}/> {/* This is where the child route (Profile) will be rendered */}
+                <Profile name= {"First one" } />
+                <Profile name={"Second one"}/> {/* This is where the child route (Profile) will be rendered */}
         </div>
         )
     }

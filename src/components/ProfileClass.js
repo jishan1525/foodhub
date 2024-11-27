@@ -1,4 +1,5 @@
 import React from 'react';
+import { useOutletContext } from 'react-router-dom';
 
 class Profile extends React.Component {
   constructor(props){
@@ -11,6 +12,7 @@ componentDidMount(){
   render() {
     console.log("Child render "+ this.props.name)
     return (
+    
       <div>
         <h1>Profile component and it should be displayed when address is About/Profile</h1>
       </div>
