@@ -74,9 +74,9 @@ const Body = () => {
 
   //Loading state - Shimmer
   // •	If isLoading is true, displays 6 shimmer cards using Array.fill and map.
-  const offline = true;
+  const isOnline = useOnline();
 
-  if (offline) {
+  if (!isOnline) {
     return (
       <div className="offline-banner">
         <h1>Offline, please check your connection!</h1>

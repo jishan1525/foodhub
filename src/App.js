@@ -11,6 +11,7 @@ import Contact from "./components/Contact";
 import ResturantMenu from "./components/ResturantMenu";
 import Profile from "./components/ProfileClass";
 
+
 //default import
 //import Title from "./components/Header";
 //named import
@@ -155,6 +156,10 @@ const appRounter = createBrowserRouter(
         path: "/rest/:id",
         element: <ResturantMenu/>,
       },
+      // {
+      //   path: "/Instamart",
+      //   element: <Instamart/>,
+      // },
       // {
       //   path: "/formik",
       //   element: <formik/>,
