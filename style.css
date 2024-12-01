@@ -341,3 +341,25 @@ button:hover {
   color: #666;
   margin-left: 5px; /* Space between stars and text */
 }
+
+/* offline styles */
+.offline-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8d7da; /* Light red background for warning */
+  color: #721c24; /* Dark red text for readability */
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.offline-banner h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 20px;
+  border: 2px solid #f5c6cb; /* Subtle red border to highlight message */
+  border-radius: 10px;
+  background-color: #ffffff; /* White background for text contrast */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}

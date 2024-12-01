@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ShimmerCard from "./shimmer";
 import ResturantCard from "./ResturantCard";
 import { Link } from "react-router-dom";
+import { TbRuler } from "react-icons/tb";
 
 
 // useEffect: Used to perform side effects, like fetching data from an API.
@@ -78,6 +79,16 @@ const Body = () => {
 
   //Loading state - Shimmer
   // •	If isLoading is true, displays 6 shimmer cards using Array.fill and map.
+  const offline = true;
+
+  if (offline) {
+    return (
+      <div className="offline-banner">
+        <h1>Offline, please check your connection!</h1>
+      </div>
+    );
+  }
+
 
   if (isLoading) {
     // Show shimmer while loading
