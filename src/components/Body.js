@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import ShimmerCard from "./shimmer";
 import ResturantCard from "./ResturantCard";
 import { Link } from "react-router-dom";
-import { TbRuler } from "react-icons/tb";
+import filterData from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
 
 // useEffect: Used to perform side effects, like fetching data from an API.
@@ -68,14 +69,8 @@ const Body = () => {
   // •	searchText: If empty, returns the full list of restaurants.
 	// •	filter: Filters the restaurant list where the name includes the search query (case-insensitive).
 
-  function filterData(searchText, resturants) {
-    if (!searchText) {
-      return resturants;
-    }
-    return resturants.filter((restaurant) =>
-      restaurant.info.name.toLowerCase().includes(searchText.toLowerCase())
-    );
-  }
+
+  
 
   //Loading state - Shimmer
   // •	If isLoading is true, displays 6 shimmer cards using Array.fill and map.

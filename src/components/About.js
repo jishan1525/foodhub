@@ -16,13 +16,12 @@ import Profile from "./ProfileClass";
 class About extends React.Component{
     constructor(props){
         super(props)
-        console.log("Parent class const")
+        
     }
     componentDidMount(){
-        console.log("Parent Mount")
+    
     }
     render(){
-        console.log("Parent render")
         return(
 
             <div>
@@ -31,7 +30,7 @@ class About extends React.Component{
                
                 This is the About us page of swiggy clone</p>
                 <Profile name= {"First one" } />
-                <Profile name={"Second one"}/> {/* This is where the child route (Profile) will be rendered */}
+               {/* This is where the child route (Profile) will be rendered */}
         </div>
         )
     }
